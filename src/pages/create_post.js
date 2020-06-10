@@ -80,7 +80,7 @@ function Post({history}) {
             return 
         }
 
-        if(e.target.files[0].size > 6000000){
+        if(e.target.files[0].size > 20000000){
             set_error_message('Maximum file size of 20MB')
             return
         }

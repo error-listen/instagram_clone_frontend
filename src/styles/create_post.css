@@ -18,9 +18,10 @@
     height: 1px;
     overflow: hidden;
     padding: 0;
-    position: absolute !important;
-    white-space: nowrap;
     width: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
    
 .container_post form [type="file"] + label {
