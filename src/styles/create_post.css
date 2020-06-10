@@ -1,0 +1,88 @@
+.container_post{
+    margin: 200px auto;
+    width: 100%;
+    max-width: 650px;
+}
+
+.container_post form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #DBDBDB;
+    padding: 50px;
+}
+
+.container_post form [type="file"] {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    white-space: nowrap;
+    width: 1px;
+}
+   
+.container_post form [type="file"] + label {
+    background-color: #1E90FF;
+    padding: 10px;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    padding-left: 2rem 4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+    
+.container_post form [type="file"]:focus + label,
+.container_post form [type="file"] + label:hover {
+      background-color: #C3E0FB;
+}
+    
+.container_post form [type="file"]:focus + label {
+    outline: 1px dotted #000;
+}
+
+.container_post form p:nth-child(4){
+    color: #FF0000;
+    font-size: 15px;
+}
+
+.container_post form textarea{
+    max-width: 300px;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 13px;
+    height: 100px;
+    resize: none;
+    width: 400px;
+    margin-bottom: 30px;
+}
+
+.container_post form textarea::placeholder { 
+    color: #A9A9A9;
+}
+
+.container_post form button{
+    border: none;
+    padding: 10px;
+    width: 200px;
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #FFF;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .container_post {
+        margin: 50px auto;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .container_post form{
+        border: 0px;
+    }
+}

@@ -1,0 +1,233 @@
+.container_profile .bold_text{
+    font-weight: bold;
+}
+
+.container_profile{
+    margin: 50px auto;
+    width: 100%;
+    max-width: 900px;
+}
+
+.container_profile .modal {
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+  
+.container_profile .modal  .modal_content {
+    background-color: #fefefe;
+    margin: 300px auto;
+    border: 1px solid #888;
+    width: 25%;
+    min-width: 300px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container_profile .modal  .modal_content h3{
+    margin-top: 20px;
+}
+
+.container_profile .modal  .modal_content [type="file"] {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    white-space: nowrap;
+    width: 1px;
+}
+   
+.container_profile .modal  .modal_content [type="file"] + label {
+    background-color: #FFF;
+    padding: 15px;
+    color: #1E90FF;
+    cursor: pointer;
+    display: inline-block;
+    padding-left: 2rem 4rem;
+    font-weight: bold;
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    border: 1px solid #DBDBDB;
+}
+
+.container_profile .modal  .modal_content button:nth-child(4){
+    background-color: #FFF;
+    padding: 15px;
+    cursor: pointer;
+    display: inline-block;
+    padding-left: 2rem 4rem;
+    font-weight: bold;
+    font-size: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border: none;
+    border-left: 1px solid #DBDBDB;
+    border-right: 1px solid #DBDBDB;
+    border-bottom: 1px solid #DBDBDB;
+    color: #FF0000;
+    outline: none;
+}
+
+.container_profile .modal  .modal_content button:nth-child(5){
+    background-color: #FFF;
+    padding: 15px;
+    cursor: pointer;
+    display: inline-block;
+    padding-left: 2rem 4rem;
+    font-size: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border: none;
+    border-left: 1px solid #DBDBDB;
+    border-right: 1px solid #DBDBDB;
+    border-bottom: 1px solid #DBDBDB;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    outline: none;
+}
+
+
+.container_profile article .article_header{
+    display: flex;
+}
+
+.container_profile article .article_header h1{
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.container_profile article .article_header img{
+    border-radius: 100%;
+    height: 150px;
+    object-fit: cover;
+    width: 150px;  
+    margin-left: 100px;
+    cursor: pointer;
+}
+
+.container_profile article .article_header .profile_informations{ 
+    margin: 10px 0px 0px 100px;
+}
+
+.container_profile article .article_body{
+    margin-top: 30px;
+}
+
+.container_profile article .article_body .separate{
+    margin-bottom: 30px;
+}
+
+.container_profile article .article_body .separate hr{
+    border: 0.5px solid #DBDBDB;
+}
+
+.container_profile article .article_body .separate .links{
+   display: flex;
+   justify-content: center;
+}
+
+.container_profile article .article_body .separate .links .border_route{
+    border-top: 0.5px solid #000;
+}
+
+.container_profile article .article_body .separate .links .border_route svg{
+    position: relative;
+    top: 10px;
+    margin-right: 10px;
+}
+
+.container_profile article .article_body .separate .links .border_route span{
+    position: relative;
+    top: 10px;
+    font-size: 15px;
+    color: #4F4F4F;
+}
+
+.container_profile article .article_body .posts{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.container_profile article .article_body .posts div{
+    position: relative;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.container_profile article .article_body .posts div img{
+    height: 270px;
+    object-fit: cover;
+    width: 270px;  
+}
+
+
+.container_profile article .article_body .posts div video{
+    height: 270px;
+    object-fit: cover;
+    width: 270px;  
+    cursor: pointer;
+}
+
+.container_profile article .article_body .posts div span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.container_profile article .article_body .posts div span img{
+    width: 100px;
+    height: 100px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .container_profile{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container_profile .modal  .modal_content {
+        margin: 100px auto;
+    }
+    
+
+    .container_profile article .article_header img{
+        border-radius: 100%;
+        height: 100px;
+        object-fit: cover;
+        width: 100px;
+        margin-left: 50px;  
+        cursor: pointer;
+    }
+
+    .container_profile article .article_header .profile_informations{ 
+        margin: 10px 0px 0px 50px;
+    }
+
+
+    .container_profile article .article_body .posts{
+        display: flex;
+        flex-direction: column;
+    }
+    
+}

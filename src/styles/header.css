@@ -1,0 +1,33 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 15px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+header .header_end{
+    display: flex;
+    align-items: center;
+}
+
+header .header_end a:nth-child(1){
+    margin-right: 20px;
+}
+
+header .header_end a:nth-child(2) img{
+    border-radius: 100%;
+    height: 25px;
+    object-fit: cover;
+    width: 25px;  
+    cursor: pointer;
+}
+
+header .header_end button{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    background-color: #FFF;
+    border: none;
+    cursor: pointer;
+}
