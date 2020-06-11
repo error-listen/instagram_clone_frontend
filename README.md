@@ -1,68 +1,65 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# instagram-clone-frontend
 
-## Available Scripts
+![instagram_clone](https://user-images.githubusercontent.com/66707613/84338560-c9e3ea80-ab72-11ea-84ad-d0b9c98fee81.gif)
 
-In the project directory, you can run:
+Project Web: https://project-instagram-frontend.herokuapp.com
 
-### `npm start`
+Backend: https://github.com/error-listen/instagram_clone_backend
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<h2>About this Project</h2>
+Instagram clone with some features.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<h2>Why?</h2>
+This project is part of my personal portfolio.
 
-### `npm test`
+<h2>Functionalities</h2>
+<ul>
+  <li>Sign up</li>
+  <li>Sign in</li>
+  <li>Log out</li>
+  <li>Post pictures and videos with a description</li>
+  <li>Like photos in real time</li>
+  <li>Upload profile photo</li>
+  <li>Delete profile photo</li>
+</ul>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h2>Getting Start</h2>
 
-### `npm run build`
+<h3>Prerequisites</h3>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To run this project in development mode, you will need of nodejs, you can found <a href="https://nodejs.org/en/">here</a>.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+<h3>Installing</h4>
+<h4>Cloning the Repository</h5>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`$ git clone https://github.com/error-listen/instagram_clone_frontend.git`
 
-### `npm run eject`
+`$ cd instagram_clone_frontend`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<h4>Installing dependencies</h3>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`$ yarn`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<i>or</i>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+`$ npm install`
 
-## Learn More
+<h2>Running</h2>
+With all dependencies installed and the environment properly configured, you can now run the app:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`$ npm start` 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<h2>Built With</h2>
 
-### Code Splitting
+<ul>
+  <li><a href="https://pt-br.reactjs.org/">ReactJS</a> - Is an open source JavaScript library focused on creating user interfaces on web pages.</li>
+  <li><a href="https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom">React-router-dom</a> - Router</li>
+  <li><a href="https://github.com/axios/axios">Axios</a> - HTTP CLIENT</li>
+  <li><a href="https://socket.io/">SOCKET.IO</a> - Enables real-time, bidirectional and event-based communication.
+It works on every platform, browser or device, focusing equally on reliability and speed</li>
+  <li><a href="https://serverjs.io">Server</a> - Powerful server for Node.js that just works so you can focus on your awesome project</li>
+</ul>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+<h2>License</h2>
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This project is licensed under the MIT License - see the <a href="https://github.com/Cyb3rB0t1R/instagram-clone-frontend/blob/master/LICENSE">LICENSE.md</a> file for details
