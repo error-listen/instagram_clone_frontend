@@ -62,4 +62,4 @@ It works on every platform, browser or device, focusing equally on reliability a
 
 <h2>License</h2>
 
-This project is licensed under the MIT License - see the <a href="https://github.com/Cyb3rB0t1R/instagram-clone-frontend/blob/master/LICENSE">LICENSE.md</a> file for details
+This project is licensed under the MIT License - see the <a href="https://github.com/error-listen/instagram_clone_frontend/blob/master/LICENSE">LICENSE.md</a> file for details
