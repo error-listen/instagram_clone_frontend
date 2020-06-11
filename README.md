@@ -47,7 +47,7 @@ To run this project in development mode, you will need of nodejs, you can found 
 <h2>Running</h2>
 With all dependencies installed and the environment properly configured, you can now run the app:
 
-`$ npm start` 
+`$ npm run dev` 
 
 <h2>Built With</h2>
 
