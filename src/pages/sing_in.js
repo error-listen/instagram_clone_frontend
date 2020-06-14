@@ -100,7 +100,7 @@ function Sign_in({ history }) {
                     </div>
                 </form>
                 <div className="no_have_acount_container">
-                    <span>Don't have an account?</span><Link to="/sign_up">Sign In</Link>
+                    <span>Don't have an account?</span><Link to="/sign_up">Sign Up</Link>
                 </div>
             </div>
         </div>

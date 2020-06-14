@@ -49,8 +49,8 @@ function Feed() {
         const socket = io('https://project-instagram-backend.herokuapp.com', {
             query: { user: user_logged._id }
         })
-        socket.on('post', newPost => {
-            set_posts(posts.map(post => post._id === newPost._id ? newPost : post))
+        socket.on('post', new_post => {
+            set_posts(posts.map(post => post._id === new_post._id ? new_post : post))
         })
 
         const like = document.getElementsByClassName('like')

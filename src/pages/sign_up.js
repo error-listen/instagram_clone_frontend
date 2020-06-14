@@ -90,7 +90,7 @@ function Sign_up({ history }) {
                 <button onClick={handle_sign_up} ref={button_sign_up}>Sign Up</button>
             </form>
             <div className="have_acount_container">
-                <span>Do you have an account?</span><Link to='/sign_in'>Sign Up</Link>
+                <span>Do you have an account?</span><Link to='/sign_in'>Sign In</Link>
             </div>
         </div>
     )
