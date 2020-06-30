@@ -70,7 +70,7 @@ function Post({history}) {
         if(post.data.message === 'Maximum file size of 20MB'){
             set_error_message('Maximum file size of 20MB')
             set_loading(false)
-            input_file.current.disabled = true
+            input_file.current.disabled = false
             return
         }
 
