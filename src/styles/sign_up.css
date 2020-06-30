@@ -13,7 +13,7 @@
     align-items: center;
     border: 1px solid #DBDBDB;
     width: 350px;
-    height: 390px;
+    height: 410px;
 }
 
 .container_sign_up form h3{
@@ -35,7 +35,7 @@
     color: #A9A9A9;
 }
 
-.container_sign_up form p{
+.container_sign_up form .error_sign_up{
     text-align: center;
     margin-top: 10px;
     color: #FF0000;
@@ -44,7 +44,6 @@
 
 .container_sign_up form button{
     border: none;
-    padding: 7px;
     width: 250px;
     border-radius: 3px;
     margin-top: 10px;
@@ -52,6 +51,7 @@
     font-weight: bold;
     color: #FFF;
     cursor: pointer;
+    height: 35px;
 }
 
 .container_sign_up .have_acount_container{

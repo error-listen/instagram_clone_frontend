@@ -6,6 +6,8 @@ import api from '../services/api'
 
 import '../styles/create_post.css'
 
+import loading_gif from '../assets/images/loading.gif'
+
 function Post({history}) {
 
     const [file_name, set_file_name] = useState('')
@@ -13,6 +15,7 @@ function Post({history}) {
     const [description, set_description] = useState('')
     const [type, set_type] = useState('')
     const [error_message, set_error_message] = useState('')
+    const [loading, set_loading] = useState(false)
 
     const [token] = useState(`Bearer ${localStorage.getItem('app_token')}`)
 
@@ -38,6 +41,8 @@ function Post({history}) {
     async function handle_post(e){
         e.preventDefault()
 
+        set_loading(true)
+
         input_file.current.disabled = true
 
         button_post.current.style.backgroundColor = '#C3E0FB'
@@ -56,12 +61,21 @@ function Post({history}) {
         data.append('file', file)
         data.append('type', type)
 
-        await api.post('post/create', data, {
+        const post = await api.post('post/create', data, {
             headers: {
                 authorization: token
             }
         })
 
+        if(post.data.message === 'Maximum file size of 20MB'){
+            set_error_message('Maximum file size of 20MB')
+            set_loading(false)
+            input_file.current.disabled = true
+            return
+        }
+
+        set_loading(false)
+        input_file.current.disabled = false
         history.push('/')
 
     }
@@ -80,11 +94,6 @@ function Post({history}) {
             return 
         }
 
-        if(e.target.files[0].size > 20000000){
-            set_error_message('Maximum file size of 20MB')
-            return
-        }
-
         if(allowed_extensions_image.exec(filePath)){
             set_type('image')
         }else if(allowed_extensions_video.exec(filePath)){
@@ -101,6 +110,14 @@ function Post({history}) {
         }
     }
 
+    function render_loading_gif(){
+        if(loading){
+            return <img src={loading_gif} alt={'Loading...'} />
+        }else{
+            return <p>Post</p>
+        }
+    }
+
     return (
         <Fragment>
             <HEADER />
@@ -111,7 +128,7 @@ function Post({history}) {
                     <p>{file_name}</p>
                     {render_error_message()}
                     <textarea placeholder="Description" onChange={e => set_description(e.target.value)} />
-                    <button onClick={handle_post} ref={button_post}>Post</button>
+                    <button onClick={handle_post} ref={button_post}>{render_loading_gif()}</button>
                 </form>
             </div>
         </Fragment>

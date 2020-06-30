@@ -66,13 +66,13 @@
 
 .container_post form button{
     border: none;
-    padding: 10px;
     width: 200px;
     border-radius: 3px;
     font-size: 13px;
     font-weight: bold;
     color: #FFF;
     cursor: pointer;
+    height: 35px;
 }
 
 @media only screen and (max-width: 600px) {

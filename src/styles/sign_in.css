@@ -98,7 +98,7 @@
     color: #A9A9A9;
 }
 
-.container_sign_in .form_and_link form .form_body p{
+.container_sign_in .form_and_link form .form_body .error_sign_in{
     text-align: center;
     margin-top: 10px;
     color: #FF0000;
@@ -107,7 +107,6 @@
 
 .container_sign_in .form_and_link form .form_body button{
     border: none;
-    padding: 7px;
     width: 250px;
     border-radius: 3px;
     margin-top: 10px;
@@ -115,6 +114,8 @@
     font-weight: bold;
     color: #FFF;
     cursor: pointer;
+    height: 35px;
+
 }
 
 .container_sign_in .form_and_link .no_have_acount_container{
