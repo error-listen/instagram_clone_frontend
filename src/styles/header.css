@@ -15,14 +15,6 @@ header .header_end a:nth-child(1){
     margin-right: 20px;
 }
 
-header .header_end a:nth-child(2) img{
-    border-radius: 100%;
-    height: 25px;
-    object-fit: cover;
-    width: 25px;  
-    cursor: pointer;
-}
-
 header .header_end button{
     display: flex;
     align-items: center;
@@ -30,4 +22,14 @@ header .header_end button{
     background-color: #FFF;
     border: none;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 500px) {
+    header .header_end a:nth-child(1){
+        display: none;
+    }
+
+    header .header_end a:nth-child(2){
+        display: none;
+    }
 }

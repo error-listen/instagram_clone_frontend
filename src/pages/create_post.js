@@ -1,8 +1,9 @@
 import React, { useRef, useState, Fragment, useEffect } from 'react'
 
-import HEADER from '../components/header'
-
 import api from '../services/api'
+
+import HEADER from '../components/header'
+import FOOTER from '../components/footer'
 
 import '../styles/create_post.css'
 
@@ -16,8 +17,6 @@ function Post({history}) {
     const [type, set_type] = useState('')
     const [error_message, set_error_message] = useState('')
     const [loading, set_loading] = useState(false)
-
-    const [token] = useState(`Bearer ${localStorage.getItem('app_token')}`)
 
     const input_file = useRef(null)
     const button_post = useRef(null)
@@ -49,11 +48,7 @@ function Post({history}) {
         button_post.current.style.cursor = 'unset'
         button_post.current.disabled = true
 
-        const get_user_logged = await api.get('/user', {
-            headers: {
-                authorization: token
-            }
-        })
+        const get_user_logged = await api.get('/user')
 
         const data = new FormData()
         data.append('user_id', get_user_logged.data.user._id)
@@ -61,11 +56,7 @@ function Post({history}) {
         data.append('file', file)
         data.append('type', type)
 
-        const post = await api.post('post/create', data, {
-            headers: {
-                authorization: token
-            }
-        })
+        const post = await api.post('post/create', data)
 
         if(post.data.message === 'Maximum file size of 20MB'){
             set_error_message('Maximum file size of 20MB')
@@ -131,6 +122,7 @@ function Post({history}) {
                     <button onClick={handle_post} ref={button_post}>{render_loading_gif()}</button>
                 </form>
             </div>
+            <FOOTER />
         </Fragment>
     )
 }

@@ -25,11 +25,6 @@
 }
 
 .container_feed article .article_header img{
-    border-radius: 100%;
-    height: 30px;
-    object-fit: cover;
-    width: 30px;  
-    cursor: pointer;
     margin-right: 10px;
 }
 
@@ -75,10 +70,12 @@
 }
 
 .container_feed article .article_footer .post_informations img{
-    border-radius: 100%;
-    height: 25px;
-    object-fit: cover;
-    width: 25px;  
-    cursor: pointer;
     margin-right: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    .container_feed article{
+        border: none;
+    }
+    
 }

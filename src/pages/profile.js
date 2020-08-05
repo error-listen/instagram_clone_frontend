@@ -3,8 +3,9 @@ import React, { useEffect, useState, Fragment, useRef } from 'react'
 import api from '../services/api'
 
 import HEADER from '../components/header'
+import FOOTER from '../components/footer'
+import PROFILE_PICTURE from '../components/profile_picture'
 
-import no_user_picture from '../assets/images/no_user_picture.jpg'
 import play_image from '../assets/images/play.png'
 
 import '../styles/profile.css'
@@ -15,8 +16,6 @@ function Profile({ match }) {
     const [user_posts, set_user_posts] = useState([])
     const [user_logged, set_user_logged] = useState([])
 
-    const [token] = useState(`Bearer ${localStorage.getItem('app_token')}`)
-
     const modal = useRef(null)
     const input_file = useRef(null)
 
@@ -24,23 +23,12 @@ function Profile({ match }) {
 
         async function load_profile() {
 
-            const get_profile = await api.get(`/profile/${match.params.username}`, {
-                headers: {
-                    authorization: token
-                }
-            })
+            const get_profile = await api.get(`/profile/${match.params.username}`)
 
-            const get_posts = await api.get('/posts', {
-                headers: {
-                    authorization: token
-                }
-            })
+            const get_posts = await api.get('/posts')
 
-            const get_user_logged = await api.get('user', {
-                headers: {
-                    authorization: token
-                }
-            })
+            const get_user_logged = await api.get('user')
+
             set_user_logged(get_user_logged.data.user)
 
             function filter_by_author(post) {
@@ -55,7 +43,7 @@ function Profile({ match }) {
 
         load_profile()
 
-    }, [match.params.username, token])
+    }, [match.params.username])
 
     async function add_picture_profile(e) {
 
@@ -73,21 +61,13 @@ function Profile({ match }) {
 
         modal.current.style.display = 'none'
 
-        await api.post('user/add/picture', data, {
-            headers: {
-                authorization: token
-            }
-        })
+        await api.post('user/add/picture', data)
 
         alert('Profile photo may take a while to show')
     }
 
     async function dele_picture_profile() {
-        await api.post('user/delete/picture', { user_id: user._id }, {
-            headers: {
-                authorization: token
-            }
-        })
+        await api.post('user/delete/picture', { user_id: user._id })
 
         window.location.reload()
     }
@@ -145,7 +125,7 @@ function Profile({ match }) {
                 </div>
                 <article>
                     <div className="article_header">
-                        <img src={!user.picture_url ? no_user_picture : user.picture_url} onClick={open_modal} alt={`Pic ${user.username}`} />
+                        <PROFILE_PICTURE picture={user.picture_url} class={"picture_larger"} handleClick={open_modal} />
                         <div className="profile_informations">
                             <h1>{user.username}</h1>
                             <p className="bold_text">{user.full_name}</p>
@@ -175,6 +155,7 @@ function Profile({ match }) {
                     </div>
                 </article>
             </div>
+            <FOOTER />
         </Fragment>
     )
 }

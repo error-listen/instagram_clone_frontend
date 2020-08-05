@@ -6,10 +6,11 @@ import io from 'socket.io-client'
 
 import api from '../services/api'
 
-import no_user_picture from '../assets/images/no_user_picture.jpg'
-import play_image from '../assets/images/play.png'
-
 import HEADER from '../components/header'
+import FOOTER from '../components/footer'
+import PROFILE_PICTURE from '../components/profile_picture'
+
+import play_image from '../assets/images/play.png'
 
 import '../styles/feed.css'
 
@@ -18,31 +19,21 @@ function Feed() {
     const [posts, set_posts] = useState([])
     const [user_logged, set_user_logged] = useState([])
 
-    const [token] = useState(`Bearer ${localStorage.getItem('app_token')}`)
-
     document.title = 'Instagram'
 
     useEffect(() => {
 
         async function load_feed() {
-            const get_posts = await api.get('posts', {
-                headers: {
-                    authorization: token
-                }
-            })
+            const get_posts = await api.get('posts')
             set_posts(get_posts.data.posts)
 
-            const get_user_loged = await api.get('user', {
-                headers: {
-                    authorization: token
-                }
-            })
+            const get_user_loged = await api.get('user')
             set_user_logged(get_user_loged.data.user)
         }
 
         load_feed()
 
-    }, [token])
+    }, [])
 
     useEffect(() => {
 
@@ -66,10 +57,6 @@ function Feed() {
         await api.post('/post/like', {
             post_id,
             user_id: user_logged._id,
-        }, {
-            headers: {
-                authorization: token
-            }
         })
     }
 
@@ -110,7 +97,7 @@ function Feed() {
                         <article key={post._id}>
                             <div className="article_header">
                                 <Link to={`/profile/${post.author}`}>
-                                    <img src={!post.picture_url ? no_user_picture : post.picture_url} alt={`Pic ${post.author}`} />
+                                    <PROFILE_PICTURE class={'picture_normal'} picture={post.picture_url} />
                                 </Link>
                                 <Link to={`/profile/${post.author}`}>
                                     <p className="bold_text">{post.author}</p>
@@ -126,11 +113,11 @@ function Feed() {
                             </div>
                             <div className="article_footer">
                                 <div className="post_informations">
-                                    {post.likes.length > 5
+                                    {post.likes.length > 1
                                         ?
-                                        <Link to={`/profile/${post.likes[0].username}`}><img alt={`Pic ${post.author}`}
-                                            src={post.likes[0] === undefined ? undefined : post.likes[0].picture_url === "" ? no_user_picture : post.likes[0].picture_url}
-                                        /></Link>
+                                        <Link to={`/profile/${post.likes[0].username}`}>
+                                            <PROFILE_PICTURE class={'picture_small'} picture={post.likes[0] === undefined ? undefined : post.likes[0].picture_url} />
+                                        </Link>
                                         :
                                         <span></span>}
                                     {post.likes.length > 0
@@ -147,6 +134,7 @@ function Feed() {
                     )
                 })}
             </div>
+            <FOOTER />
         </Fragment>
     )
 }

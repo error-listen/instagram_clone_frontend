@@ -11,7 +11,6 @@ import NOT_FOUND_PAGE from '../pages/not_found'
 import PRIVATE_ROUTE from './private_routes'
 
 function Routes() {
-
     return (
         <BrowserRouter>
             <Switch>
@@ -20,7 +19,7 @@ function Routes() {
                 <PRIVATE_ROUTE component={PROFILE_PAGE} path="/profile/:username" />
                 <Route path="/sign_in" component={SIGN_IN_PAGE}  />
                 <Route path="/sign_up" component={SIGN_UP_PAGE} />
-                <Route path='*' exact={true} component={NOT_FOUND_PAGE} />
+                <Route path='*' component={NOT_FOUND_PAGE} />
             </Switch>
         </BrowserRouter >
     )

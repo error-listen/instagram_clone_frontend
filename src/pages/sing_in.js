@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom'
 
 import api from '../services/api'
 
+import { sign_in } from '../services/auth'
+
 import phones_image from '../assets/images/phones.png'
 import screenshot_1 from '../assets/images/screenshot_1.jpg'
 import screenshot_2 from '../assets/images/screenshot_2.jpg'
@@ -27,7 +29,7 @@ function Sign_in({ history }) {
 
     useEffect(() => {
 
-        if(localStorage.getItem('app_token')){
+        if(localStorage.getItem('@instagram_token')){
             history.push('/')
         }
 
@@ -72,7 +74,7 @@ function Sign_in({ history }) {
             return
         }
 
-        localStorage.setItem('app_token', get_user_token.data.token)
+        sign_in(get_user_token.data.token)
 
         set_loading(false)
         

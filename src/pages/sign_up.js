@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react'
 
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
+
+import { sign_in } from '../services/auth'
 
 import api from '../services/api'
 
@@ -22,7 +24,7 @@ function Sign_up({ history }) {
 
     useEffect(() => {
 
-        if(localStorage.getItem('app_token')){
+        if(localStorage.getItem('@instagram_token')){
             history.push('/')
         }
 
@@ -81,7 +83,7 @@ function Sign_up({ history }) {
             return 
         }
 
-        localStorage.setItem('app_token', get_user_token.data.token)
+        sign_in(get_user_token.data.token)
 
         set_loading(false)
 
@@ -120,4 +122,4 @@ function Sign_up({ history }) {
     )
 }
 
-export default Sign_up
+export default withRouter(Sign_up) 

@@ -1,0 +1,22 @@
+.picture_small{
+    border-radius: 100%;
+    height: 25px;
+    object-fit: cover;
+    width: 25px;  
+    cursor: pointer;
+}
+
+.picture_normal{
+    border-radius: 100%;
+    height: 30px;
+    object-fit: cover;
+    width: 30px;  
+    cursor: pointer;
+}
+
+.picture_larger{
+    border-radius: 100%;
+    height: 150px;
+    object-fit: cover;
+    width: 150px; 
+}

@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom'
 
 import api from '../services/api'
 
-import no_user_picture from '../assets/images/no_user_picture.jpg'
+import PROFILE_PICTURE from './profile_picture'
+
 import instagram_logo from '../assets/images/instagram_logo.png'
 import icon_camera_instagram from '../assets/images/icon_camera_instagram.png'
 import icon_logout from '../assets/images/icon_logout.png'
@@ -15,27 +16,20 @@ function Header() {
 
     const [user_logged, set_user_logged] = useState([])
 
-    const [token] = useState(`Bearer ${localStorage.getItem('app_token')}`)
-
     useEffect(() => {
 
         async function get_user() {
-            const get_user_loged = await api.get('user', {
-                headers: {
-                    authorization: token
-                }
-            })
+            const get_user_loged = await api.get('user')
 
             set_user_logged(get_user_loged.data.user)
-
         }
 
         get_user()
 
-    }, [token])
+    }, [])
 
     function logout(){
-        localStorage.removeItem('app_token')
+        localStorage.removeItem('@instagram_token')
 
         window.location.reload()
     }
@@ -55,7 +49,7 @@ function Header() {
                     />
                 </Link>
                 <Link to={`/profile/${user_logged.username}`}>
-                    <img src={!user_logged.picture_url ? no_user_picture : user_logged.picture_url} alt={`Pic ${user_logged.username}`} />
+                    <PROFILE_PICTURE picture={user_logged.picture_url} class={'picture_small'} />
                 </Link>
                 <button onClick={logout}>
                     <img src={icon_logout} alt="Logout"
